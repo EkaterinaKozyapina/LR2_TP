@@ -1,42 +1,42 @@
-#include "Student.h"
+п»ї#include "Student.h"
 
 Student::Student() {
-	cout << "Конструктор без параметров" << endl;
+	cout << "РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ" << endl;
 
 	//string bufStr1, bufStr2, bufStr3;
 	//int bufInt1, bufInt2, bufInt3;
 
-	//cout << "Введите фамилию: ";
+	//cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ: ";
 	//cin >> bufStr1;
 	//setSurname(bufStr1);
 
-	//cout << "Введите инициалы (И.О.): ";
+	//cout << "Р’РІРµРґРёС‚Рµ РёРЅРёС†РёР°Р»С‹ (Р.Рћ.): ";
 	//cin >> bufStr1;
 	//setInitials(bufStr1);
 
-	//cout << "Введите номер группы: ";
+	//cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РіСЂСѓРїРїС‹: ";
 	//cin >> bufInt1;
 	//setGroup(bufInt1);
 
-	//cout << "Введите\n\tпредмет1: ";
+	//cout << "Р’РІРµРґРёС‚Рµ\n\tРїСЂРµРґРјРµС‚1: ";
 	//cin >> bufStr1;
-	//cout << "\tоценка1: ";
+	//cout << "\tРѕС†РµРЅРєР°1: ";
 	//cin >> bufInt1;
-	//cout << "\tпредмет2: ";
+	//cout << "\tРїСЂРµРґРјРµС‚2: ";
 	//cin >> bufStr2;
-	//cout << "\tоценка2: ";
+	//cout << "\tРѕС†РµРЅРєР°2: ";
 	//cin >> bufInt2;
-	//cout << "\tпредмет3: ";
+	//cout << "\tРїСЂРµРґРјРµС‚3: ";
 	//cin >> bufStr3;
-	//cout << "\tоценка3: ";
+	//cout << "\tРѕС†РµРЅРєР°3: ";
 	//cin >> bufInt3;
 	//setEducation(bufStr1, bufInt1, bufStr2, bufInt2, bufStr3, bufInt3);
 
-	//cout << "Студент внесен в список" << endl;
+	//cout << "РЎС‚СѓРґРµРЅС‚ РІРЅРµСЃРµРЅ РІ СЃРїРёСЃРѕРє" << endl;
 }
 
 Student::Student(Student & obj) {
-	cout << "Конструктор копирования" << endl;
+	cout << "РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ" << endl;
 
 	string bufStr1, bufStr2, bufStr3;
 	int bufInt1, bufInt2, bufInt3;
@@ -49,12 +49,12 @@ Student::Student(Student & obj) {
 }
 
 Student::~Student() {
-	cout << "Деструктор" << endl;
+	cout << "Р”РµСЃС‚СЂСѓРєС‚РѕСЂ" << endl;
 }
 
 void Student::setSurname(string buf) {
 	if (buf == "")
-		throw exception("Неверная фамилия");
+		throw exception("РќРµРІРµСЂРЅР°СЏ С„Р°РјРёР»РёСЏ");
 
 	surname = buf;
 }
@@ -63,7 +63,7 @@ string Student::getSurname() { return surname; }
 
 void Student::setInitials(string buf) {
 	if (buf == "" || buf.size() != 4 || buf.find('.') == -1)
-		throw exception("Неверные инициалы");
+		throw exception("РќРµРІРµСЂРЅС‹Рµ РёРЅРёС†РёР°Р»С‹");
 
 	initials = buf;
 }
@@ -72,7 +72,7 @@ string Student::getInitials() { return initials; }
 
 void Student::setGroup(int buf) {
 	if (buf < 1000 || buf > 10000)
-		throw exception("Неверный номер группы");
+		throw exception("РќРµРІРµСЂРЅС‹Р№ РЅРѕРјРµСЂ РіСЂСѓРїРїС‹");
 
 	group = buf;
 }
@@ -81,10 +81,10 @@ int Student::getGroup() { return group; }
 
 void Student::setEducation(string bufStr1, int bufInt1, string bufStr2, int bufInt2, string bufStr3, int bufInt3) {
 	if (bufStr1 == "" || bufStr2 == "" || bufStr3 == "")
-		throw exception("Неверный предмет");
+		throw exception("РќРµРІРµСЂРЅС‹Р№ РїСЂРµРґРјРµС‚");
 
 	if (bufInt1 < 2 || bufInt1 > 5 || bufInt2 < 2 || bufInt2 > 5 || bufInt3 < 2 || bufInt3 > 5)
-		throw exception("Неверная оценка");
+		throw exception("РќРµРІРµСЂРЅР°СЏ РѕС†РµРЅРєР°");
 
 	education[0].item = bufStr1;
 	education[0].grade = bufInt1;
@@ -111,33 +111,33 @@ istream & operator>> (istream & in, Student & object) {
 	string bufStr1, bufStr2, bufStr3;
 	int bufInt1, bufInt2, bufInt3;
 
-	cout << "Введите фамилию: ";
+	cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ: ";
 	in >> bufStr1;
 	object.setSurname(bufStr1);
 
-	cout << "Введите инициалы (И.О.): ";
+	cout << "Р’РІРµРґРёС‚Рµ РёРЅРёС†РёР°Р»С‹ (Р.Рћ.): ";
 	in >> bufStr1;
 	object.setInitials(bufStr1);
 
-	cout << "Введите номер группы: ";
+	cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РіСЂСѓРїРїС‹: ";
 	in >> bufInt1;
 	object.setGroup(bufInt1);
 
-	cout << "Введите\n\tпредмет1: ";
+	cout << "Р’РІРµРґРёС‚Рµ\n\tРїСЂРµРґРјРµС‚1: ";
 	in >> bufStr1;
-	cout << "\tоценка1: ";
+	cout << "\tРѕС†РµРЅРєР°1: ";
 	in >> bufInt1;
-	cout << "\tпредмет2: ";
+	cout << "\tРїСЂРµРґРјРµС‚2: ";
 	in >> bufStr2;
-	cout << "\tоценка2: ";
+	cout << "\tРѕС†РµРЅРєР°2: ";
 	in >> bufInt2;
-	cout << "\tпредмет3: ";
+	cout << "\tРїСЂРµРґРјРµС‚3: ";
 	in >> bufStr3;
-	cout << "\tоценка3: ";
+	cout << "\tРѕС†РµРЅРєР°3: ";
 	in >> bufInt3;
 	object.setEducation(bufStr1, bufInt1, bufStr2, bufInt2, bufStr3, bufInt3);
 
-	cout << "Студент внесен в список" << endl;
+	cout << "РЎС‚СѓРґРµРЅС‚ РІРЅРµСЃРµРЅ РІ СЃРїРёСЃРѕРє" << endl;
 	return in;
 }
 
@@ -145,10 +145,10 @@ ostream & operator<< (ostream  & out, Student & object) {
 	string bufStr1, bufStr2, bufStr3;
 	int bufInt1, bufInt2, bufInt3;
 
-	out << "Студент: " << object.getSurname() << " " << object.getInitials() << endl;
-	out << "Группа: " << object.getGroup() << endl;
+	out << "РЎС‚СѓРґРµРЅС‚: " << object.getSurname() << " " << object.getInitials() << endl;
+	out << "Р“СЂСѓРїРїР°: " << object.getGroup() << endl;
 	object.getEducation(bufStr1, bufInt1, bufStr2, bufInt2, bufStr3, bufInt3);
-	out << "Предметы: " << "\n\t1 - " << bufStr1 << "\t" << bufInt1 <<
+	out << "РџСЂРµРґРјРµС‚С‹: " << "\n\t1 - " << bufStr1 << "\t" << bufInt1 <<
 		"\n\t2 - " << bufStr2 << "\t" << bufInt2 <<
 		"\n\t3 - " << bufStr3 << "\t" << bufInt3 << endl;
 

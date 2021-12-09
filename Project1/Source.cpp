@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 #include <Windows.h>
 #include <fstream>
@@ -18,11 +18,11 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	// Задание 1
+	// Р—Р°РґР°РЅРёРµ 1
 
 	char choice = '0';
 	do {
-		cout << "Введите количество студентов: " << endl;
+		cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СѓРґРµРЅС‚РѕРІ: " << endl;
 		cin >> n;
 	} while (n <= 0);
 	students = new Student[n];
@@ -31,13 +31,13 @@ int main()
 	{
 		try
 		{
-			cout << "1 - Ввести элемент \n2 - Вывод всех элементов \n3 - Редактировать элемент \n4 - Удалить элемент \n5 - Выход \nПункт меню: ";
+			cout << "1 - Р’РІРµСЃС‚Рё СЌР»РµРјРµРЅС‚ \n2 - Р’С‹РІРѕРґ РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ \n3 - Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ СЌР»РµРјРµРЅС‚ \n4 - РЈРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ \n5 - Р’С‹С…РѕРґ \nРџСѓРЅРєС‚ РјРµРЅСЋ: ";
 			cin >> choice;
 
 			if (choice == '1')
 			{
 				if (index == n)
-					throw exception("Массив уже заполнен");
+					throw exception("РњР°СЃСЃРёРІ СѓР¶Рµ Р·Р°РїРѕР»РЅРµРЅ");
 
 				cin >> students[index];
 				index++;
@@ -46,7 +46,7 @@ int main()
 			else if (choice == '2')
 			{
 				if (index == 0)
-					throw exception("Массив пуст");
+					throw exception("РњР°СЃСЃРёРІ РїСѓСЃС‚");
 
 				for (int i = 0; i < index; i++)
 					cout << i + 1 << ": " << students[i];
@@ -54,12 +54,12 @@ int main()
 			else if (choice == '3')
 			{
 				int i;
-				cout << "Введите номер элемента: ";
+				cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЌР»РµРјРµРЅС‚Р°: ";
 				cin >> i;
 				i--;
 				if (i < 0 || i >= index)
-					throw exception("Неверный номер");
-				cout << "Редактируемое поле: \n\t1 - Фамилия \n\t2 - Инициалы \n\t3 - Группа \n\t4 - Предмет и оценку\n\tПункт меню: ";
+					throw exception("РќРµРІРµСЂРЅС‹Р№ РЅРѕРјРµСЂ");
+				cout << "Р РµРґР°РєС‚РёСЂСѓРµРјРѕРµ РїРѕР»Рµ: \n\t1 - Р¤Р°РјРёР»РёСЏ \n\t2 - РРЅРёС†РёР°Р»С‹ \n\t3 - Р“СЂСѓРїРїР° \n\t4 - РџСЂРµРґРјРµС‚ Рё РѕС†РµРЅРєСѓ\n\tРџСѓРЅРєС‚ РјРµРЅСЋ: ";
 				cin >> choice;
 
 				switch (choice)
@@ -67,7 +67,7 @@ int main()
 				case '1':
 				{
 					string buf;
-					cout << "Новая фамилия: ";
+					cout << "РќРѕРІР°СЏ С„Р°РјРёР»РёСЏ: ";
 					cin >> buf;
 					students[i].setSurname(buf);
 				}
@@ -75,7 +75,7 @@ int main()
 				case '2':
 				{
 					string buf;
-					cout << "Новые инициалы: ";
+					cout << "РќРѕРІС‹Рµ РёРЅРёС†РёР°Р»С‹: ";
 					cin >> buf;
 					students[i].setInitials(buf);
 				}
@@ -83,7 +83,7 @@ int main()
 				case '3':
 				{
 					int buf;
-					cout << "Новая группа: ";
+					cout << "РќРѕРІР°СЏ РіСЂСѓРїРїР°: ";
 					cin >> buf;
 					students[i].setGroup(buf);
 				}
@@ -94,50 +94,50 @@ int main()
 					int bufInt1, bufInt2, bufInt3;
 
 					char buf;
-					cout << "Введите номер предмета от 1 до 3: ";
+					cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РїСЂРµРґРјРµС‚Р° РѕС‚ 1 РґРѕ 3: ";
 					cin >> buf;
 					students[i].getEducation(bufStr1, bufInt1, bufStr2, bufInt2, bufStr3, bufInt3);
 
 					if (buf == '1')
 					{
-						cout << "Введите новый предмет: ";
+						cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ РїСЂРµРґРјРµС‚: ";
 						cin >> bufStr1;
-						cout << "Введите новую оценку: ";
+						cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІСѓСЋ РѕС†РµРЅРєСѓ: ";
 						cin >> bufInt1;
 					}
 					else if (buf == '2')
 					{
-						cout << "Введите новый предмет: ";
+						cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ РїСЂРµРґРјРµС‚: ";
 						cin >> bufStr2;
-						cout << "Введите новую оценку: ";
+						cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІСѓСЋ РѕС†РµРЅРєСѓ: ";
 						cin >> bufInt2;
 					}
 					else if (buf == '3')
 					{
-						cout << "Введите новый предмет: ";
+						cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ РїСЂРµРґРјРµС‚: ";
 						cin >> bufStr3;
-						cout << "Введите новую оценку: ";
+						cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІСѓСЋ РѕС†РµРЅРєСѓ: ";
 						cin >> bufInt3;
 					}
 					else
-						throw exception("Неверный номер предмета");
+						throw exception("РќРµРІРµСЂРЅС‹Р№ РЅРѕРјРµСЂ РїСЂРµРґРјРµС‚Р°");
 
 					students[i].setEducation(bufStr1, bufInt1, bufStr2, bufInt2, bufStr3, bufInt3);
 				}
 					break;
 				default:
-					throw exception("Неверный пункт меню");
+					throw exception("РќРµРІРµСЂРЅС‹Р№ РїСѓРЅРєС‚ РјРµРЅСЋ");
 				}
 				choice = '3';
 			}
 			else if (choice == '4')
 			{
 				int i;
-				cout << "Введите номер элемента: ";
+				cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЌР»РµРјРµРЅС‚Р°: ";
 				cin >> i;
 				i--;
 				if (i < 0 || i >= index)
-					throw exception("Неверный номер");
+					throw exception("РќРµРІРµСЂРЅС‹Р№ РЅРѕРјРµСЂ");
 
 				for (int j = i; j < index; j++)
 					students[j] = students[j + 1];
@@ -150,12 +150,12 @@ int main()
 			}
 			else 
 			{
-				throw exception("Неверный пункт меню");
+				throw exception("РќРµРІРµСЂРЅС‹Р№ РїСѓРЅРєС‚ РјРµРЅСЋ");
 			}
 		}
 		catch (const exception & exp)
 		{
-			cout << "Исключение: " << exp.what() << endl;
+			cout << "РСЃРєР»СЋС‡РµРЅРёРµ: " << exp.what() << endl;
 		}
 
 		system("pause");
@@ -165,7 +165,7 @@ int main()
 	exc();
 	delete[]students;
 
-	// Задание 2
+	// Р—Р°РґР°РЅРёРµ 2
 
 	system("cls");
 
@@ -177,7 +177,7 @@ int main()
 	try
 	{
 		if (!fin.is_open())
-			throw exception("Файл отсутствует");
+			throw exception("Р¤Р°Р№Р» РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚");
 
 		while (getline(fin, bufStr))
 		{
@@ -197,12 +197,12 @@ int main()
 			}
 		}
 		if (cnt == 0)
-			cout << "Таких строк нет" << endl;
+			cout << "РўР°РєРёС… СЃС‚СЂРѕРє РЅРµС‚" << endl;
 
 	}
 	catch (exception & exp)
 	{
-		cout << "Исключение: " << exp.what() << endl << endl;
+		cout << "РСЃРєР»СЋС‡РµРЅРёРµ: " << exp.what() << endl << endl;
 	}
 
 	fin.close();
@@ -240,7 +240,7 @@ void exc() {
 	int bufInt1, bufInt2, bufInt3;
 	int cnt = 0;
 
-	cout << "Студенты, имеющие оценку 2: " << endl;
+	cout << "РЎС‚СѓРґРµРЅС‚С‹, РёРјРµСЋС‰РёРµ РѕС†РµРЅРєСѓ 2: " << endl;
 
 	for (int i = 0; i < index; i++)
 	{
@@ -253,5 +253,5 @@ void exc() {
 		}
 	}
 	if (cnt == 0)
-		cout << "\tТаких студентов нет" << endl;
+		cout << "\tРўР°РєРёС… СЃС‚СѓРґРµРЅС‚РѕРІ РЅРµС‚" << endl;
 }
