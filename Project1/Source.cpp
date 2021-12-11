@@ -166,7 +166,7 @@ int main()
 	delete[]students;
 
 	// Задание 2
-
+	system("pause");
 	system("cls");
 
 	ifstream fin;
@@ -213,7 +213,7 @@ int main()
 void sort() {
 	string bufStr1, bufStr2, bufStr3;
 	int bufInt1, bufInt2, bufInt3;
-	int sr1, sr2;
+	float sr1, sr2;
 	Student bufStudent;
 
 	for (int i = 0; i < index - 1; i++)
@@ -221,9 +221,9 @@ void sort() {
 		for (int j = 0; j < index - i - 1; j++)
 		{
 			students[j].getEducation(bufStr1, bufInt1, bufStr2, bufInt2, bufStr3, bufInt3);
-			sr1 = (bufInt1 + bufInt2 + bufInt3) / 3;
+			sr1 = (float)(bufInt1 + bufInt2 + bufInt3) / 3;
 			students[j + 1].getEducation(bufStr1, bufInt1, bufStr2, bufInt2, bufStr3, bufInt3);
-			sr2 = (bufInt1 + bufInt2 + bufInt3) / 3;
+			sr2 = (float)(bufInt1 + bufInt2 + bufInt3) / 3;
 
 			if (sr1 > sr2)
 			{

@@ -2,37 +2,6 @@
 
 Student::Student() {
 	cout << "Конструктор без параметров" << endl;
-
-	//string bufStr1, bufStr2, bufStr3;
-	//int bufInt1, bufInt2, bufInt3;
-
-	//cout << "Введите фамилию: ";
-	//cin >> bufStr1;
-	//setSurname(bufStr1);
-
-	//cout << "Введите инициалы (И.О.): ";
-	//cin >> bufStr1;
-	//setInitials(bufStr1);
-
-	//cout << "Введите номер группы: ";
-	//cin >> bufInt1;
-	//setGroup(bufInt1);
-
-	//cout << "Введите\n\tпредмет1: ";
-	//cin >> bufStr1;
-	//cout << "\tоценка1: ";
-	//cin >> bufInt1;
-	//cout << "\tпредмет2: ";
-	//cin >> bufStr2;
-	//cout << "\tоценка2: ";
-	//cin >> bufInt2;
-	//cout << "\tпредмет3: ";
-	//cin >> bufStr3;
-	//cout << "\tоценка3: ";
-	//cin >> bufInt3;
-	//setEducation(bufStr1, bufInt1, bufStr2, bufInt2, bufStr3, bufInt3);
-
-	//cout << "Студент внесен в список" << endl;
 }
 
 Student::Student(Student & obj) {
